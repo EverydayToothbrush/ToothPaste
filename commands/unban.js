@@ -5,9 +5,9 @@ module.exports.run = async (client, message, args) => {
   if(message.member.hasPermission("BAN_MEMBERS")) {
     if (message.content.startsWith(config.prefix + "unban")) {
       if(message.content.slice(7)) {
-        message.mentions.users.map(user => {
-          message.guild.member(user).unban(user)
-        });
+        let user = message.content.slice(7);
+        message.guild.unban(`${user}`);
+        message.channel.send('It has been done');
       } else {
         message.channel.send('Who am I unbanning?');
       }
