@@ -69,3 +69,12 @@ client.on("message", (message) => {
 
 
 });
+
+client.on("guildMemberAdd", (member) => {
+  member.guild.defaultChannel.send('Welcome ' + "@" + member.user.id + ` to ${member.guild.name}`);
+});
+
+
+client.on("guildMemberRemove", (member) => {
+  member.guild.defaultChannel.send(`${member.user.username} has left`);
+});
