@@ -51,24 +51,21 @@ music(client, {
 });
 
 
-
-
-
 client.on("message", (message) => {
 
   if(!message.content.startsWith(config.prefix)) return;
-
   if(message.author.bot) return;
+
   let messageArray = message.content.split(/\s+/g)
   let command = messageArray[0]
   let args = messageArray.slice(1);
-
 
   let commands = client.commands.get(command.slice(config.prefix.length));
   if(commands) commands.run(client, message, args);
 
 
 });
+
 
 client.on("guildMemberAdd", (member) => {
   member.guild.defaultChannel.send('Welcome ' + `<@${member.user.id}>` + ` to **${member.guild.name}**`);
