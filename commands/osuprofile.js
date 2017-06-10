@@ -10,7 +10,7 @@ var osuApi = new osu.Api(config.osukey, {
 module.exports.run = async (client, message, args) => {
   if (message.content.startsWith(config.prefix + "osuprofile")) {
     let osuuser = message.content.split(" ").slice(1);
-    osuApi.getUser({u: osuuser}).then(user =>{
+    osuApi.getUser({u: osuuser}).then(user => {
       message.channel.send({embed: {
         color: 6632550,
         description: `${user.name}: ${user.pp.raw}`
