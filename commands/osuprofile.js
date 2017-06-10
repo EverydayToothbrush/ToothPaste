@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
     let osuuser = message.content.split(" ").slice(1);
     osuApi.getUser({u: osuuser}).then(user => {
       message.channel.send({embed: {
-        color: 6632550,
+        color: 16751103,
         description: `${user.name}: ${user.pp.raw}`
       }});
     });
