@@ -1,0 +1,6 @@
+{
+  "token": "discord token here",
+  "prefix": "desired prefix",
+  "ownerID": "your id",
+  "osukey": "osu api key"
+}
