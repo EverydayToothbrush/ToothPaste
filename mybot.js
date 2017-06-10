@@ -40,6 +40,7 @@ client.on('debug', (e) => console.info(e));
 client.on('ready', () => {
   console.log('I am ready!');
   console.log(client.commands);
+  client.user.setGame('with Toothbrush | [help')
 });
 
 music(client, {
