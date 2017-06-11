@@ -6,6 +6,7 @@ const config = require('./commands/config.json');
 const fs = require("fs");
 const ytdl = require('ytdl-core');
 const music = require('discord.js-music-v11');
+const mal = require("maljs")
 
 client.commands = new Discord.Collection();
 
