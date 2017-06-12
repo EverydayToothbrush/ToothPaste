@@ -7,6 +7,7 @@
     "bufferutil": "^3.0.1",
     "chai": "^4.0.2",
     "cleverbot.io": "^1.0.4",
+    "discord-spoiler-bot": "^2.0.5",
     "discord.js": "^11.1.0",
     "discord.js-music-v11": "^1.3.4",
     "erlpack": "github:hammerandchisel/erlpack",

@@ -7,6 +7,7 @@ const fs = require("fs");
 const ytdl = require('ytdl-core');
 const music = require('discord.js-music-v11');
 const mal = require("maljs")
+const SpoilerBot = require('discord-spoiler-bot');
 
 client.commands = new Discord.Collection();
 
@@ -37,6 +38,14 @@ client.on('error', (e) => console.error(e));
 client.on('warn', (e) => console.warn(e));
 
 client.on('debug', (e) => console.info(e));
+
+let config2 = {
+    client: client,
+    markAllowAll: false,
+};
+
+let bot = new SpoilerBot(config2);
+bot.connect()
 
 client.on('ready', () => {
   console.log('I am ready!');
