@@ -41,7 +41,12 @@ client.on('debug', (e) => console.info(e));
 
 let config2 = {
     client: client,
-    markAllowAll: false,
+    markUserIds: [
+      '181148305927962625',
+      '229356212414709760',
+      '212405356142264320',
+      '212930627115286529'
+    ],
 };
 
 let bot = new SpoilerBot(config2);
