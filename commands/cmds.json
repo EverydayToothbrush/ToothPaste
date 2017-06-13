@@ -1,6 +1,6 @@
 {
 
-  "cmd" : "avatar, ping, play, prune, info, prefix, help, roll, rate, kick, ban, unban, osuprofile, joined, serverinfo, anime, manga, choose, say, 8ball",
+  "cmd" : "avatar, ping, play, prune, info, prefix, help, roll, rate, kick, ban, unban, osuprofile, joined, serverinfo, anime, manga, choose, say, 8ball, about",
   "choose" : "Split between choices using a space, <[choose stuff staff> will choose between stuff and staff",
   "avatar" : "[avatar <@USER_MENTION> to display a user's profile pic (can mention multiple). Diplay your own by not mentioning anyone",
   "ping" : "Displays Toothpaste's average heartbeat latency of the past 3 beats",
@@ -10,7 +10,7 @@
   "prefix" : "Change prefix as specified <[prefix STRING_VALUE>",
   "help" : "Explanation really required?",
   "roll" : "Rolls a number between 1 and a specified number. Defaults to 100 if no number specifed",
-  "rate" : "Toothpaste's Judgement shall befall you. <[rate STRING_VALUE>",
+  "rate" : "My Judgement shall befall you. <[rate STRING_VALUE>",
   "kick" : "MOD_ONLY. Kick specified user(s). <[kick <@USER_MENTION> (can multiple mention)>",
   "ban" : "MOD_ONLY. Ban specified user(s). <[ban <@USER_MENTION> (can multiple mention)>",
   "unban" : "MOD_ONLY. Remove userID from ban list. <[unban USER_ID>",
@@ -20,6 +20,6 @@
   "anime" : "Searches MAL for queried term and links the page (will be strictly anime). <[anime STRING_VALUE>",
   "manga" : "Searches MAL for queried term and links the page (will be strictly manga). <[manga STRING_VALUE>",
   "say" : "Toothpaste shall say what you want it to say. <[say STRING_VALUE>",
-  "8ball" : "Magic 8ball. Toothpaste shall answer all your questions in its infinite wisdom" 
-
+  "8ball" : "Magic 8ball. I shall answer all your questions in my infinite wisdom",
+  "about" : "I shall tell you some things about myself"
 }
