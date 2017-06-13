@@ -1,7 +1,11 @@
 const Discord = require("discord.js");
-const Cleverbot = require('cleverbot.io');
+const Cleverbot = require('cleverio');
 const client = new Discord.Client();
-const clbot = new Cleverbot('RLyV1npsmZGSBgTB','iI6kddTQkK7WqmE2okNpi0Uiuq5NzoQR');
+const clevs = new Cleverbot({
+  key: 'MW0YOZgHAAao2OfDBcrgNAgnmzPPcCsR',
+  user: 'CxDjXK49QfMgI6CY',
+  nick: 'session2'
+});
 const config = require('./commands/config.json');
 const fs = require("fs");
 const ytdl = require('ytdl-core');
