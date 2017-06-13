@@ -1,5 +1,5 @@
 {
 
-  "cmd" : "avatar, ping, play, prune, info, prefix, help, roll, rate, kick, ban, unban, osuprofile, joined, serverinfo, anime, manga, choose"
+  "cmd" : "avatar, ping, play, prune, info, prefix, help, roll, rate, kick, ban, unban, osuprofile, joined, serverinfo, anime, manga, choose, say, 8ball"
 
 }
