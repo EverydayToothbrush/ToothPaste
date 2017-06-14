@@ -1,6 +1,6 @@
 {
 
-  "cmd" : "avatar, ping, play, prune, info, prefix, help, roll, rate, kick, ban, unban, osuprofile, joined, serverinfo, anime, manga, choose, say, 8ball, about",
+  "cmd" : "avatar, ping, play, prune, info, prefix, help, roll, rate, kick, ban, unban, osuprofile, joined, serverinfo, anime, manga, choose, say, 8ball, about, uptime, topic, poll",
   "choose" : "Split between choices using a space, <[choose stuff staff> will choose between stuff and staff",
   "avatar" : "[avatar <@USER_MENTION> to display a user's profile pic (can mention multiple). Diplay your own by not mentioning anyone",
   "ping" : "Displays Toothpaste's average heartbeat latency of the past 3 beats",
@@ -21,5 +21,8 @@
   "manga" : "Searches MAL for queried term and links the page (will be strictly manga). <[manga STRING_VALUE>",
   "say" : "Toothpaste shall say what you want it to say. <[say STRING_VALUE>",
   "8ball" : "Magic 8ball. I shall answer all your questions in my infinite wisdom",
-  "about" : "I shall tell you some things about myself"
+  "about" : "I shall tell you some things about myself",
+  "topic" : "Displays channel name and topic",
+  "uptime" : "Current bot uptime in minutes and seconds",
+  "poll" :  "Start a poll! Separate different options with a space (limit 4). <[poll a b c d> will react with 4 emojis"
 }
