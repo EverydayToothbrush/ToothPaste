@@ -1,11 +1,5 @@
 const Discord = require("discord.js");
-const Cleverbot = require('cleverio');
 const client = new Discord.Client();
-const clevs = new Cleverbot({
-  key: 'MW0YOZgHAAao2OfDBcrgNAgnmzPPcCsR',
-  user: 'CxDjXK49QfMgI6CY',
-  nick: 'session2'
-});
 const config = require('./commands/config.json');
 const fs = require("fs");
 const ytdl = require('ytdl-core');
@@ -93,6 +87,26 @@ client.on("message", (message) => {
         .addField('Stats', `***Mode***: ${beatmaps[0].mode}\n**BPM**: ${beatmaps[0].bpm}\n**${beatmaps[0].difficulty.rating.substr(0,4)}** Stars   CS **${beatmaps[0].difficulty.size}**   OD **${beatmaps[0].difficulty.overall}**   AR **${beatmaps[0].difficulty.approach}**   HP **${beatmaps[0].difficulty.drain}**   Max Combo **${beatmaps[0].maxCombo}**\n\n**${beatmaps[0].counts.favorites}** Favorites   **${beatmaps[0].counts.plays}** Plays   **${beatmaps[0].counts.passes}** Passes`)
         .addField('Tags', `${beatmaps[0].tags.slice(0)}`);
       message.channel.send({embed});
+    });
+  }
+
+  if(message.channel.type === 'dm') {
+    const Cleverbot = require('cleverio');
+    const clevs = new Cleverbot({
+      key: 'MW0YOZgHAAao2OfDBcrgNAgnmzPPcCsR',
+      user: 'CxDjXK49QfMgI6CY',
+      nick: 'session2'
+    });
+    clevs.create();
+    let query = message.content.slice(0);
+    clevs.ask(`${query}`).then(res => {
+      console.log(res.response);
+      message.channel.startTyping();
+      setTimeout(() => {
+        message.channel.send(res.response);
+        message.channel.stopTyping();
+      }, Math.random() * (1 - 3) + 1 * 1000);
+      
     });
   }
 
