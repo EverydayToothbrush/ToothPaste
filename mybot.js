@@ -99,7 +99,7 @@ client.on("message", (message) => {
     });
     clevs.create();
     let query = message.content.slice(0);
-    clevs.ask(`${query}`).then(res => {
+    clevs.ask(query).then(res => {
       console.log(res.response);
       message.channel.startTyping();
       setTimeout(() => {
