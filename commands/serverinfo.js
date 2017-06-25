@@ -1,10 +1,10 @@
-const config = require('./config.json');
+
 const fs = require("fs");
 const Discord = require("discord.js");
 
 
 module.exports.run = async (client, message, args) => {
-  if (message.content.startsWith(config.prefix + "serverinfo")) {
+  if (message.content.startsWith(process.env.PREFIX + "serverinfo")) {
     const embed = new Discord.RichEmbed()
       .setTitle('Server Information')
       .setAuthor(`${message.guild.name}`, `${message.guild.iconURL}`)

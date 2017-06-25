@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const config = require('./commands/config.json');
+
 const fs = require("fs");
 const ytdl = require('ytdl-core');
 const music = require('discord.js-music-v11');
@@ -58,14 +58,14 @@ client.on('ready', () => {
 });
 
 music(client, {
-  prefix: config.prefix,
+  prefix: process.env.PREFIX,
   global: false,
   maxQueueSize: 10,
   clearInvoker: false
 
 });
 
-var osuApi = new osu.Api(config.osukey, {
+var osuApi = new osu.Api(process.env.OSUKEY, {
   notFoundAsError: true,
   completeScores: true
 });
@@ -110,14 +110,14 @@ client.on("message", (message) => {
     });
   }
 
-  if(!message.content.startsWith(config.prefix)) return;
+  if(!message.content.startsWith(process.env.PREFIX)) return;
   if(message.author.bot) return;
 
   let messageArray = message.content.split(/\s+/g)
   let command = messageArray[0]
   let args = messageArray.slice(1);
 
-  let commands = client.commands.get(command.slice(config.prefix.length));
+  let commands = client.commands.get(command.slice(process.env.PREFIX.length));
   if(commands) commands.run(client, message, args);
 
 

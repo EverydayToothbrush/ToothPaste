@@ -1,9 +1,9 @@
-const config = require('./config.json');
+
 const fs = require("fs");
 
 module.exports.run = async (client, message, args) => {
 
-  if(message.content.startsWith(config.prefix + "choose")) {
+  if(message.content.startsWith(process.env.PREFIX + "choose")) {
     let array = message.content.split(" ");
     let options = array.slice(1);
     if(options.length !== 0) {

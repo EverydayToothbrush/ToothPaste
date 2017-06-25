@@ -1,9 +1,9 @@
-const config = require('./config.json');
+
 const fs = require("fs");
 
 module.exports.run = async (client, message, args) => {
 
-  if(message.content.startsWith(config.prefix + "roll")) {
+  if(message.content.startsWith(process.env.PREFIX + "roll")) {
     let number = parseInt(message.content.split(" ").pop())
     if(Number.isInteger(number)) {
       let rll = Math.floor(Math.random() * number) + 1;

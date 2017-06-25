@@ -2,7 +2,7 @@ const config = require('./config.json');
 const fs = require("fs")
 module.exports.run = async (client, message, args) => {
   if (message.member.hasPermission("MANAGE_ROLES")){
-    if(message.content.startsWith(config.prefix + "info")) {
+    if(message.content.startsWith(process.env.PREFIX + "info")) {
       message.delete(2000)
       message.channel.send({embed:{
         color: 14365765,

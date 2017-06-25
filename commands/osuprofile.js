@@ -1,16 +1,16 @@
-const config = require('./config.json');
+
 const fs = require("fs");
 const osu = require('node-osu');
 const Discord = require('discord.js');
 
 
-var osuApi = new osu.Api(config.osukey, {
+var osuApi = new osu.Api(process.env.OSUKEY, {
   notFoundAsError: true,
   completeScores: true
 });
 
 module.exports.run = async (client, message, args) => {
-  if (message.content.startsWith(config.prefix + "osuprofile")) {
+  if (message.content.startsWith(process.env.PREFIX + "osuprofile")) {
     let osuuser = message.content.slice(12);
     if(!osuuser) {
       message.channel.send('No User');

@@ -1,8 +1,8 @@
-const config = require('./config.json');
+
 const fs = require("fs");
 
 module.exports.run = async (client, message, args) => {
-  if(message.content.startsWith(config.prefix + "poll")) {
+  if(message.content.startsWith(process.env.PREFIX + "poll")) {
     let choices = message.content.split(" ");
     let poll = choices.slice(1);
     if(poll.length === 2) {

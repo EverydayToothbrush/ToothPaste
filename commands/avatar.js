@@ -1,7 +1,7 @@
-const config = require('./config.json');
+
 const fs = require("fs");
 module.exports.run = async (client, message, args) => {
-  if (message.content.startsWith(config.prefix + "avatar")) {
+  if (message.content.startsWith(process.env.PREFIX + "avatar")) {
     if(message.content.slice(8)){
       message.mentions.users.map(user => {
         message.channel.send({files: [

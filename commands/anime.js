@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
-const config = require('./config.json');
+
 const fs = require("fs");
 const mal = require('maljs');
 
 module.exports.run = async (client, message, args) => {
-  if(message.content.startsWith(config.prefix + "anime")) {
+  if(message.content.startsWith(process.env.PREFIX + "anime")) {
     let animesearch = message.content.slice(7);
     if(!animesearch) {
       message.channel.send("Nothing to search");

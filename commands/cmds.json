@@ -7,7 +7,6 @@
   "play" : "Must be in voice channel. <[play search_query (searches youtube)> or <[play YOUTUBE_URL>. [skip, [pause, [volume, etc also available",
   "prune" : "MOD_ONLY. Prune specified number of messages within 14 days old <[prune NUMBER>",
   "info" : "MOD_ONLY. Rules",
-  "prefix" : "Change prefix as specified <[prefix STRING_VALUE>",
   "help" : "Explanation really required?",
   "roll" : "Rolls a number between 1 and a specified number. Defaults to 100 if no number specifed",
   "rate" : "My Judgement shall befall you. <[rate STRING_VALUE>",

@@ -1,9 +1,9 @@
-const config = require('./config.json');
+
 const fs = require("fs");
 const cmds = require('./cmds.json');
 module.exports.run = async (client, message, args) => {
   if(message.member.hasPermission("BAN_MEMBERS")) {
-    if (message.content.startsWith(config.prefix + "unban")) {
+    if (message.content.startsWith(process.env.PREFIX + "unban")) {
       if(message.content.slice(7)) {
         let user = message.content.slice(7);
         message.guild.unban(`${user}`);

@@ -1,10 +1,10 @@
-const config = require('./config.json');
+
 const fs = require("fs");
 
 module.exports.run = async (client, message, args) => {
   if (message.member.hasPermission("MANAGE_MESSAGES")){
 
-    if(message.content.startsWith(config.prefix + "prune")) {
+    if(message.content.startsWith(process.env.PREFIX + "prune")) {
       let messagecount = parseInt(message.content.split(" ").pop());
       if(!Number.isInteger(messagecount)){
         message.reply("That is not a number");
@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args) => {
       message.channel.fetchMessages({limit: messagecount})
         .then(messages => message.channel.bulkDelete(messages));
         message.channel.send("Deleted " + messagecount + " messages", {code: 'js'})
-          .then(message => message.delete(2000));        
+          .then(message => message.delete(2000));
       }
 
 

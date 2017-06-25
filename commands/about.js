@@ -1,8 +1,8 @@
-const config = require('./config.json');
+
 const Discord = require('discord.js');
 
 module.exports.run = async (client, message, args) => {
-  if (message.content.startsWith(config.prefix + "about")) {
+  if (message.content.startsWith(process.env.PREFIX + "about")) {
     const embed = new Discord.RichEmbed()
       .setTitle('Lemme tell ya about myself!')
       .setAuthor(`${client.user.username}`, `${client.user.displayAvatarURL}`)

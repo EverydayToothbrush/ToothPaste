@@ -2,7 +2,7 @@ const config = require('./config.json');
 const fs = require("fs");
 const cmds = require('./cmds.json');
 module.exports.run = async (client, message, args) => {
-  if (message.content.startsWith(config.prefix + "help")) {
+  if (message.content.startsWith(process.env.PREFIX + "help")) {
     let total = message.content.split(" ");
     let command = total.slice(1);
     if(command.length === 0) {
