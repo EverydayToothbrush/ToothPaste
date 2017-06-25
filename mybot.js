@@ -30,7 +30,7 @@ fs.readdir('./commands/', (err, files) => {
   });
 });
 
-client.login(config.token);
+client.login(process.env.BOT_TOKEN);
 
 client.on('error', (e) => console.error(e));
 
@@ -106,7 +106,7 @@ client.on("message", (message) => {
         message.channel.send(res.response);
         message.channel.stopTyping();
       }, Math.random() * (1 - 3) + 1 * 1000);
-      
+
     });
   }
 
