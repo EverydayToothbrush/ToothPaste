@@ -1,4 +1,4 @@
-const config = require('./config.json');
+
 const fs = require("fs");
 const cmds = require('./cmds.json');
 module.exports.run = async (client, message, args) => {
