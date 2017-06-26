@@ -1,6 +1,6 @@
 {
 
-  "cmd" : "avatar, ping, play, prune, info, prefix, help, roll, rate, kick, ban, unban, osuprofile, joined, serverinfo, anime, manga, choose, say, 8ball, about, uptime, topic, poll",
+  "cmd" : "avatar, ping, play, prune, info, help, roll, rate, kick, ban, unban, osuprofile, joined, serverinfo, anime, manga, choose, say, 8ball, about, uptime, topic, poll",
   "choose" : "Split between choices using a space, <[choose stuff staff> will choose between stuff and staff",
   "avatar" : "[avatar <@USER_MENTION> to display a user's profile pic (can mention multiple). Diplay your own by not mentioning anyone",
   "ping" : "Displays Toothpaste's average heartbeat latency of the past 3 beats",
