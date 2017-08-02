@@ -12,6 +12,7 @@ module.exports.run = async (client, message, args) => {
       .setThumbnail(`${client.user.displayAvatarURL}`)
       .setTimestamp()
       .setURL('https://github.com/EverydayToothbrush/Toothpaste');
+      .addField('Servers', `${client.guilds.array().length}`)
 
     message.channel.send({embed});
 
