@@ -11,8 +11,8 @@ module.exports.run = async (client, message, args) => {
       .setFooter('Don\'t Forget to Brush Your Teeth!', `${message.author.displayAvatarURL}`)
       .setThumbnail(`${client.user.displayAvatarURL}`)
       .setTimestamp()
-      .setURL('https://github.com/EverydayToothbrush/Toothpaste');
-      .addField('Servers', `${client.guilds.array().length}`)
+      .setURL('https://github.com/EverydayToothbrush/Toothpaste')
+      .addField('Servers', `${client.guilds.array().length}`);
 
     message.channel.send({embed});
 
