@@ -1,6 +1,6 @@
 {
 
-  "cmd" : "avatar, ping, play, prune, info, help, roll, rate, kick, ban, unban, osuprofile, joined, serverinfo, anime, manga, choose, say, 8ball, about, uptime, topic, poll",
+  "cmd" : "avatar, ping, play, prune, info, help, roll, rate, kick, ban, unban, osuprofile, joined, serverinfo, anime, manga, choose, say, 8ball, about, uptime, topic, poll, invite",
   "choose" : "Split between choices using a space, <[choose stuff staff> will choose between stuff and staff",
   "avatar" : "[avatar <@USER_MENTION> to display a user's profile pic (can mention multiple). Diplay your own by not mentioning anyone",
   "ping" : "Displays Toothpaste's average heartbeat latency of the past 3 beats",
@@ -23,5 +23,6 @@
   "about" : "I shall tell you some things about myself",
   "topic" : "Displays channel name and topic",
   "uptime" : "Current bot uptime in H/M/S",
-  "poll" :  "Start a poll! Separate different options with a space (limit 4). <[poll a b c d> will react with 4 emojis"
+  "poll" :  "Start a poll! Separate different options with a space (limit 4). <[poll a b c d> will react with 4 emojis",
+  "invite" : "I generate an invite link so you can invite me to your server :D"
 }
