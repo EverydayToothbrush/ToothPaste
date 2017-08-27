@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const paste = new Discord.Client();
+const client = new Discord.Client();
 
 const fs = require("fs");
 const ytdl = require('ytdl-core');
@@ -8,7 +8,7 @@ const mal = require("maljs")
 const SpoilerBot = require('discord-spoiler-bot');
 const osu = require('node-osu');
 
-paste.commands = new Discord.Collection();
+client.commands = new Discord.Collection();
 
 fs.readdir('./commands/', (err, files) => {
   if(err) console.error(err);
@@ -25,21 +25,21 @@ fs.readdir('./commands/', (err, files) => {
 
     let props = require('./commands/' + f);
     console.log(i + 1 + ' : ' + f + ' loaded');
-    paste.commands.set(props.help.name, props);
+    client.commands.set(props.help.name, props);
 
   });
 });
 
-paste.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
 
-paste.on('error', (e) => console.error(e));
+client.on('error', (e) => console.error(e));
 
-paste.on('warn', (e) => console.warn(e));
+client.on('warn', (e) => console.warn(e));
 
-paste.on('debug', (e) => console.info(e));
+client.on('debug', (e) => console.info(e));
 
 let config2 = {
-    client: paste,
+    client: client,
     markUserIds: [
       '181148305927962625',
       '229356212414709760',
@@ -51,13 +51,13 @@ let config2 = {
 let bot = new SpoilerBot(config2);
 bot.connect()
 
-paste.on('ready', () => {
+client.on('ready', () => {
   console.log('I am ready!');
-  console.log(paste.commands);
-  paste.user.setGame('with Toothbrush | [help')
+  console.log(client.commands);
+  client.user.setGame('with Toothbrush | [help')
 });
 
-music(paste, {
+music(client, {
   prefix: process.env.PREFIX,
   global: false,
   maxQueueSize: 10,
@@ -70,7 +70,7 @@ var osuApi = new osu.Api(process.env.OSUKEY, {
   completeScores: true
 });
 
-paste.on("message", (message) => {
+client.on("message", (message) => {
   let beatmap = `https://osu.ppy.sh/b/`;
   if(message.content.startsWith(beatmap)) {
     let mapId = message.content.slice(beatmap.length).replace('&m=0', '');
@@ -117,18 +117,18 @@ paste.on("message", (message) => {
   let command = messageArray[0]
   let args = messageArray.slice(1);
 
-  let commands = paste.commands.get(command.slice(process.env.PREFIX.length));
+  let commands = client.commands.get(command.slice(process.env.PREFIX.length));
   if(commands) commands.run(client, message, args);
 
 
 });
 
 
-paste.on("guildMemberAdd", (member) => {
+client.on("guildMemberAdd", (member) => {
   member.guild.defaultChannel.send('Welcome ' + `<@${member.user.id}>` + ` to **${member.guild.name}**`);
 });
 
 
-paste.on("guildMemberRemove", (member) => {
+client.on("guildMemberRemove", (member) => {
   member.guild.defaultChannel.send(`***${member.user.username}*** has left`);
 });
