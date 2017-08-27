@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const client = new Discord.Client();
+const paste = new Discord.Client();
 const fs = require("fs");
 const cmds = require('./cmds.json');
 module.exports.run = async (client, message, args) => {
@@ -9,9 +9,9 @@ module.exports.run = async (client, message, args) => {
       if(!game) {
         message.channel.send('What Game?');
       } else if(game === "default") {
-        client.user.setGame('with Toothbrush | [help');
+        paste.user.setGame('with Toothbrush | [help');
       } else {
-        client.user.setGame(`${game} | [help`);
+        paste.user.setGame(`${game} | [help`);
       }
 
     }
