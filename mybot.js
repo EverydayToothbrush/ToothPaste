@@ -54,7 +54,7 @@ bot.connect()
 client.on('ready', () => {
   console.log('I am ready!');
   console.log(client.commands);
-  client.user.setPresence({ 
+  client.user.setPresence({
     game: {
       name:'with Toothbrush | [help',
       type: 0
@@ -130,10 +130,10 @@ client.on("message", (message) => {
 
 
 client.on("guildMemberAdd", (member) => {
-  member.guild.defaultChannel.send('Welcome ' + `<@${member.user.id}>` + ` to **${member.guild.name}**`);
+  member.guild.channels.find("name", "general").send('Welcome ' + `<@${member.user.id}>` + ` to **${member.guild.name}**`);
 });
 
 
 client.on("guildMemberRemove", (member) => {
-  member.guild.defaultChannel.send(`***${member.user.username}*** has left`);
+  member.guild.channels.find("name", "general").send(`***${member.user.username}*** has left`);
 });
