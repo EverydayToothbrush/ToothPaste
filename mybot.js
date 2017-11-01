@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 const fs = require("fs");
 const ytdl = require('ytdl-core');
-const music = require('discord.js-music-v11');
+const Music = require('discord.js-musicbot-addon');
 const mal = require("maljs")
 const SpoilerBot = require('discord-spoiler-bot');
 const osu = require('node-osu');
@@ -62,12 +62,12 @@ client.on('ready', () => {
   });
 });
 
-music(client, {
+const music = new Music(client, {
   prefix: process.env.PREFIX,
-  global: false,
   maxQueueSize: 10,
-  clearInvoker: false
-
+  clearInvoker: false,
+  ownerOverMember: true,
+  botOwner: process.env.OWNER_ID
 });
 
 var osuApi = new osu.Api(process.env.OSUKEY, {
