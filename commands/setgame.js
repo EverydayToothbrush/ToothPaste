@@ -9,14 +9,18 @@ module.exports.run = async (client, message, args) => {
       if(!game) {
         message.channel.send('What Game?');
       } else if(game === "default") {
-        client.user.setPresence(game: {
-          name:'with Toothbrush | [help',
-          type: 0
+        client.user.setPresence({
+          game: {
+            name:'with Toothbrush | [help',
+            type: 0
+          }
         });
       } else {
-        client.user.setPresence(game: {
-          name: `${game} | [help`,
-          type: 0
+        client.user.setPresence({
+          game: {
+            name: `${game} | [help`,
+            type: 0
+          }
         });
       }
 
