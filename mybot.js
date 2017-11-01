@@ -54,7 +54,10 @@ bot.connect()
 client.on('ready', () => {
   console.log('I am ready!');
   console.log(client.commands);
-  client.user.setGame('with Toothbrush | [help')
+  client.user.setPresence(game: {
+    name:'with Toothbrush | [help',
+    type: 0
+  })
 });
 
 music(client, {
