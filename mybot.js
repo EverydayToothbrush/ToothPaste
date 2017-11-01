@@ -63,6 +63,7 @@ client.on('ready', () => {
 });
 
 const music = new Music(client, {
+  youtubeKey: 'AIzaSyC6HLzmz75kTnNh1YF_o3lLK7T3U65HNa8',
   prefix: process.env.PREFIX,
   maxQueueSize: 10,
   clearInvoker: false,
