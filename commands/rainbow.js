@@ -7,26 +7,23 @@ module.exports.run = async (client, message, args) => {
       let r = randomize();
       let g = randomize();
       let b = randomize();
-      let color = [r, g, b];
       let arg = message.content.slice(9);
       if(arg != 'off') {
         let rolename = message.member.guild.roles.find('name', arg);
         function change(){
-          setInterval(function(){rolename.setColor(color)}, 60000);
+          setInterval(function color(){rolename.setColor([r, g, b])}, 120000);
         }
         if(rolename) {
-          while(1 == 1){
             change();
-          }
         } else {
-          return;
+          message.channel.send("What role?");
         }
         if (arg == 'off'){
           clearInterval(change());
         }
       }
     } else {
-    message.channel.send("You are not the Brush");
+      message.channel.send("You are not the Brush");
     }
   }
 }
