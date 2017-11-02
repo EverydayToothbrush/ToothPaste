@@ -7,14 +7,11 @@ module.exports.run = async (client, message, args) => {
       let arg = message.content.slice(9);
       if(arg != 'off') {
         let rolename = message.member.guild.roles.find('name', arg);
-        function change(){
-          setInterval(function color(){rolename.setColor('RANDOM')}, 60000);
-        }
         if(rolename) {
-            var interval = change();
-            change();
+            const inter = setInterval(function color(){rolename.setColor('RANDOM')}, 60000);
+            inter;
         } else if (arg == 'off'){
-          clearInterval(interval);
+          clearInterval(inter);
         } else {
           message.channel.send("What role?");
         }
