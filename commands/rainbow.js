@@ -25,8 +25,9 @@ module.exports.run = async (client, message, args) => {
           clearInterval(change());
         }
       }
-  } else {
+    } else {
     message.channel.send("You are not the Brush");
+    }
   }
 }
 
