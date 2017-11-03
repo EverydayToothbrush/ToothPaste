@@ -8,17 +8,13 @@ module.exports.run = async (client, message, args) => {
       if(arg != 'off') {
         let rolename = message.member.guild.roles.find('name', arg);
         if(rolename) {
-            function change() {
-                rolename.setColor('RANDOM');
-                timeout = setTimeout(function color(){rolename.setColor('RANDOM'); change();}, 60000);
-            }
-            change();
+          rolename.setColor('RANDOM');
+          timeout = setInterval(function color(){rolename.setColor('RANDOM')}, 60000);
         } else {
           message.channel.send("What role?");
         }
-
       } else if (arg == 'off') {
-        clearTimeout(timeout);
+        clearInterval(timeout);
         message.channel.send('Rainbow off');
       }
     } else {
