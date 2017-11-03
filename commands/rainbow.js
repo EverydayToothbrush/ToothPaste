@@ -4,7 +4,6 @@ module.exports.run = async (client, message, args) => {
   if(message.author.id === process.env.OWNER_ID) {
     if (message.content.startsWith(process.env.PREFIX + "rainbow")) {
       let arg = message.content.slice(9);
-      var timeout;
       if(arg != 'off') {
         let rolename = message.member.guild.roles.find('name', arg);
         if(rolename) {
@@ -13,7 +12,8 @@ module.exports.run = async (client, message, args) => {
         } else {
           message.channel.send("What role?");
         }
-      } else if (arg == 'off') {
+      }
+      if (arg == 'off') {
         clearInterval(timeout);
         message.channel.send('Rainbow off');
       }
