@@ -17,9 +17,9 @@ module.exports.run = async (client, message, args) => {
         clearInterval(timeout);
         message.channel.send('Rainbow off');
       }
-    } else {
-      message.channel.send("You are not the Brush");
     }
+  } else {
+    message.channel.send("You are not the Brush");
   }
 }
 
