@@ -97,6 +97,7 @@ client.on("message", (message) => {
   }
 
   if(message.channel.type === 'dm') {
+    if(message.content.startsWith(process.env.PREFIX)) return;
     if(message.author.bot) return;
     const Cleverbot = require('cleverio');
     const clevs = new Cleverbot({
