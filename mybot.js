@@ -96,7 +96,7 @@ client.on("message", (message) => {
     });
   }
 
-  if(message.channel.type === 'dm') {
+  if(message.channel.type === 'dm' || message.mentions.users.find('username', 'Toothpaste')) {
     if(message.content.startsWith(process.env.PREFIX)) return;
     if(message.author.bot) return;
     const Cleverbot = require('cleverio');
