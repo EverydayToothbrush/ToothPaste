@@ -28,7 +28,8 @@
     "node-opus": "^0.2.6",
     "node-osu": "^1.2.0",
     "opusscript": "0.0.3",
-    "uws": "^0.14.1"
+    "uws": "^0.14.1",
+    "youtube-audio-stream": "0.0.50"
   },
   "devDependencies": {},
   "author": "",

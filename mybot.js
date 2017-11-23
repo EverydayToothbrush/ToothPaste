@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-
+const youtubeStream = require('youtube-audio-stream');
 const fs = require("fs");
 const ytdl = require('ytdl-core');
 const Music = require('discord.js-musicbot-addon');
