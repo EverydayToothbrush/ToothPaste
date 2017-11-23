@@ -24,6 +24,7 @@
     "ffmpeg-binaries": "^3.2.2-3",
     "libsodium-wrappers": "^0.5.1",
     "maljs": "^0.3.0",
+    "miniget": "^1.1.0",
     "mocha": "^3.4.2",
     "node-opus": "^0.2.6",
     "node-osu": "^1.2.0",
