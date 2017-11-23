@@ -68,7 +68,9 @@ const music = new Music(client, {
   maxQueueSize: 20,
   clearInvoker: false,
   ownerOverMember: true,
-  botOwner: process.env.OWNER_ID
+  botOwner: process.env.OWNER_ID,
+  requesterName: true,
+  inlineEmbeds: true
 });
 
 var osuApi = new osu.Api(process.env.OSUKEY, {
