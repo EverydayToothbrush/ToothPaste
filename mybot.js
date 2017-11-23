@@ -65,12 +65,12 @@ client.on('ready', () => {
 const music = new Music(client, {
   youtubeKey: 'AIzaSyC6HLzmz75kTnNh1YF_o3lLK7T3U65HNa8',
   prefix: process.env.PREFIX,
-  maxQueueSize: 20,
+  maxQueueSize: 50,
   clearInvoker: false,
   ownerOverMember: true,
   botOwner: process.env.OWNER_ID,
   requesterName: true,
-  inlineEmbeds: true
+  inlineEmbeds: false
 });
 
 var osuApi = new osu.Api(process.env.OSUKEY, {
