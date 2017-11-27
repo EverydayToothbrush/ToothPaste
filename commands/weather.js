@@ -5,29 +5,11 @@ const Discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
   if (message.content.startsWith(process.env.PREFIX + "weather")) {
-    let arg = message.content.split(' ');
-    let locat = arg[1];
-    let unit = arg[2];
+    let locat = message.content.slice(9);
     if(!locat) {
         message.channel.send("Where are you looking for?");
-    } else if(!unit) {
-      weather.find({search: `${locat}`, degreeType: 'C'}, function(err, result) {
-        if(err) console.log(err);
-        const embed = new Discord.RichEmbed()
-          .setTitle(`Weather for ${result.location.name}`)
-          .setAuthor(`${message.guild.name}`, `${message.guild.iconURL}`)
-          .setColor('RANDOM')
-          .setDescription(`Longitude: **${result.location.long}**   Latitude: **${result.location.lat}**\nDay: **${result.current.day}**   Temp: **${result.current.temperature}**`)
-          .setFooter('Don\'t Forget to Brush Your Teeth!', 'https://cdn.discordapp.com/avatars/181148305927962625/18a8691ce47a3175e8e836ca51d6da94.webp')
-          .setThumbnail(`${result.location.imagerelativeurl}`)
-          .setTimestamp()
-          .setURL(`${message.author.displayAvatarURL}`);
-
-
-          message.channel.send({embed});
-      });
     } else {
-      weather.find({search: `${locat}`, degreeType: `${unit}`}, function(err, result) {
+      weather.find({search: `${locat}`, degreeType: 'C'}, function(err, result) {
         if(err) console.log(err);
         const embed = new Discord.RichEmbed()
           .setTitle(`Weather for ${result.location.name}`)
