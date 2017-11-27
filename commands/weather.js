@@ -12,12 +12,12 @@ module.exports.run = async (client, message, args) => {
       weather.find({search: `${locat}`, degreeType: 'C'}, function(err, result) {
         if(err) console.log(err);
         const embed = new Discord.RichEmbed()
-          .setTitle(`Weather for ${result.location.name}`)
+          .setTitle(`Weather for ${result[0].location.name}`)
           .setAuthor(`${message.guild.name}`, `${message.guild.iconURL}`)
           .setColor('RANDOM')
-          .setDescription(`Longitude: **${result.location.long}**   Latitude: **${result.location.lat}**\nDay: **${result.current.day}**   Temp: **${result.current.temperature}**`)
+          .setDescription(`Longitude: **${result[0].location.long}**   Latitude: **${result[0].location.lat}**\nDay: **${result[0].current.day}**   Temp: **${result[0].current.temperature}**`)
           .setFooter('Don\'t Forget to Brush Your Teeth!', 'https://cdn.discordapp.com/avatars/181148305927962625/18a8691ce47a3175e8e836ca51d6da94.webp')
-          .setThumbnail(`${result.location.imagerelativeurl}`)
+          .setThumbnail(`${result[0].location.imagerelativeurl}`)
           .setTimestamp()
           .setURL(`${message.author.displayAvatarURL}`);
 
