@@ -8,7 +8,9 @@ module.exports.run = async (client, message, args) => {
     let arg = message.content.split('');
     let locat = arg[1];
     let unit = arg[2];
-    if(!unit) {
+    if(!locat) {
+        message.channel.send("Where are you looking for?");
+    } else if(!unit) {
       weather.find({search: `${locat}`, degreeType: 'C'}, function(err, result) {
         if(err) console.log(err);
         const embed = new Discord.RichEmbed()
@@ -22,14 +24,8 @@ module.exports.run = async (client, message, args) => {
           .setURL(`${message.author.displayAvatarURL}`);
 
 
-
           message.channel.send({embed});
-
       });
-
-    } else if(!locat) {
-      message.channel.send("Where are you looking for?");
-
     } else {
       weather.find({search: `${locat}`, degreeType: `${unit}`}, function(err, result) {
         if(err) console.log(err);
@@ -44,9 +40,7 @@ module.exports.run = async (client, message, args) => {
           .setURL(`${message.author.displayAvatarURL}`);
 
 
-
           message.channel.send({embed});
-
       });
     }
   }
