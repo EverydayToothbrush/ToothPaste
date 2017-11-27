@@ -5,7 +5,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
   if (message.content.startsWith(process.env.PREFIX + "weather")) {
-    let arg = message.content.split('');
+    let arg = message.content.split(' ');
     let locat = arg[1];
     let unit = arg[2];
     if(!locat) {
