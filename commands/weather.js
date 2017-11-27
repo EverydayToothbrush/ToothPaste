@@ -13,14 +13,15 @@ module.exports.run = async (client, message, args) => {
         if(err) console.log(err);
         const embed = new Discord.RichEmbed()
           .setTitle(`Weather for ${result[0].location.name}`)
-          .setAuthor(`${message.guild.name}`, `${message.guild.iconURL}`)
+          .setAuthor(`${message.member.displayName}`, `${message.author.displayAvatarURL}`)
           .setColor('RANDOM')
-          .setDescription(`Longitude: **${result[0].location.long}**   Latitude: **${result[0].location.lat}**\nDay: **${result[0].current.day}**   Temp: **${result[0].current.temperature}**`)
+          .setDescription(`Longitude: **${result[0].location.long}**   Latitude: **${result[0].location.lat}**`)
           .setFooter('Don\'t Forget to Brush Your Teeth!', 'https://cdn.discordapp.com/avatars/181148305927962625/18a8691ce47a3175e8e836ca51d6da94.webp')
-          .setThumbnail(`${result[0].location.imagerelativeurl}`)
+          .setThumbnail(`${result[0].current.imageUrl}`)
           .setTimestamp()
-          .setURL(`${message.author.displayAvatarURL}`);
-
+          .setURL(`${result[0].location.imagerelativeurl}`)
+          .addField(`Day: **${result[0].current.day}**`, `Temp: **${result[0].current.temperature} C/${((result[0].current.temperature) * (9/5)) + 32} F**   Condition: **${result[0].current.skytext}**   Date: **${result[0].current.date}**\nHumidity: **${result[0].current.humidity}**   Feels Like: **${result[0].current.feelslike} C/${((result[0].current.feelslike) * (9/5)) + 32} F** Wind: **${result[0].current.winddisplay}**\nPrecipitation: **${result[0].forecast[1].precip}%**`)
+          .addField(`Day: **${result[0].forecast[2].day}**`, `Temp (C): **${result[0].forecast[2].low}Low/${result[0].forecast[2].high}High**   Condition: **${result[0].forecast[2].skytextday}**   Date: **${result[0].forecast[2].date}**\nPrecipitation: **${result[0].forecast[2].precip}%**`);
 
           message.channel.send({embed});
       });
