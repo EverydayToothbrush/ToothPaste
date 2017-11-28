@@ -108,8 +108,6 @@ client.on("message", (message) => {
   } else if(reply[message.content]){
     if(message.author.bot) return;
     message.channel.send(reply[message.content]);
-  } else {
-    continue;
   }
 
   if(message.channel.type === 'dm' || message.mentions.users.find('username', 'Toothpaste')) {
