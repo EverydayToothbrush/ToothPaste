@@ -7,6 +7,7 @@ const Music = require('discord.js-musicbot-addon');
 const mal = require("maljs")
 const SpoilerBot = require('discord-spoiler-bot');
 const osu = require('node-osu');
+const reply = require('./replies.json');
 
 client.commands = new Discord.Collection();
 
@@ -98,6 +99,16 @@ client.on("message", (message) => {
     });
   }
 
+  if(message.content.startsWith(replies[0])) {
+    let array = message.content.split(' ');
+    let source = array[0];
+    if(message.content.startsWith('ayy')) {
+      message.channel.send(`${replies[0].ayy + 'o'.repeat(source.length - 3)}`)
+    } else {
+      message.channel.send(replies[0][message.content])
+    }
+  }
+
   if(message.channel.type === 'dm' || message.mentions.users.find('username', 'Toothpaste')) {
     if(message.content.startsWith(process.env.PREFIX)) return;
     if(message.author.bot) return;
@@ -124,7 +135,7 @@ client.on("message", (message) => {
   if(message.author.bot) return;
 
   let messageArray = message.content.split(/\s+/g)
-  let command = messageArray[0]
+  let command = messageArray[0].toLowerCase();
   let args = messageArray.slice(1);
 
   let commands = client.commands.get(command.slice(process.env.PREFIX.length));
