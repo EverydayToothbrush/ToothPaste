@@ -106,7 +106,7 @@ client.on("message", (message) => {
     message.channel.send(`${reply.ayy + 'o'.repeat(source.length - 3)}`);
   } else {
     message.channel.send(`${reply[message.content]}`);
-  }  
+  }
 
   if(message.channel.type === 'dm' || message.mentions.users.find('username', 'Toothpaste')) {
     if(message.content.startsWith(process.env.PREFIX)) return;
@@ -133,11 +133,11 @@ client.on("message", (message) => {
   if(!message.content.startsWith(process.env.PREFIX)) return;
   if(message.author.bot) return;
 
-  let messageArray = message.content.split(/\s+/g).toString().toLowerCase()
-  let command = messageArray[0].toString().toLowerCase()
+  let messageArray = message.content.split(/\s+/g)
+  let command = messageArray[0]
   let args = messageArray.slice(1);
 
-  let commands = client.commands.get(command.slice(process.env.PREFIX.length));
+  let commands = client.commands.get(command.slice(process.env.PREFIX.length)).toLowerCase();
   if(commands) commands.run(client, message, args);
 
 
