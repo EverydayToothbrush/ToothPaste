@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
         message.channel.send({files: [
           {
             attachment: user.displayAvatarURL,
-            name: `${user.displayAvatarURL.split('/').pop().replace('?size=128','')}`
+            name: `${user.displayAvatarURL.split('/').pop().replace(/[?]size=\d+/g,'')}`
           }
         ]});
       });
@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
       message.channel.send({files: [
         {
           attachment: message.author.displayAvatarURL,
-          name: `${message.author.displayAvatarURL.split('/').pop().replace('?size=128','')}`
+          name: `${message.author.displayAvatarURL.split('/').pop().replace(/[?]size=\d+/g,'')}`
         }
       ]});
     }
