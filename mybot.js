@@ -137,7 +137,7 @@ client.on("message", (message) => {
   let command = messageArray[0]
   let args = messageArray.slice(1);
 
-  let commands = client.commands.get(command.slice(process.env.PREFIX.length)).toLowerCase();
+  let commands = client.commands.get(command.slice(process.env.PREFIX.length).toLowerCase());
   if(commands) commands.run(client, message, args);
 
 
