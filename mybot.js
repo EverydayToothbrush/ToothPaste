@@ -99,13 +99,13 @@ client.on("message", (message) => {
     });
   }
 
-  if(message.content.startsWith(replies[0])) {
+  if(message.content.startsWith(reply[0])) {
     let array = message.content.split(' ');
     let source = array[0];
     if(message.content.startsWith('ayy')) {
-      message.channel.send(`${replies[0].ayy + 'o'.repeat(source.length - 3)}`)
+      message.channel.send(`${reply[0].ayy + 'o'.repeat(source.length - 3)}`)
     } else {
-      message.channel.send(replies[0][message.content])
+      message.channel.send(reply[0][message.content])
     }
   }
 
