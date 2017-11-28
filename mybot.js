@@ -109,7 +109,7 @@ client.on("message", (message) => {
     if(message.author.bot) return;
     message.channel.send(reply[message.content]);
   } else {
-    return;
+    continue;
   }
 
   if(message.channel.type === 'dm' || message.mentions.users.find('username', 'Toothpaste')) {
