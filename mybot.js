@@ -105,9 +105,11 @@ client.on("message", (message) => {
     let array = message.content.split(' ');
     let source = array[0];
     message.channel.send(`${reply.ayy + 'o'.repeat(source.length - 3)}`);
-  } else {
+  } else if(reply[message.content]){
     if(message.author.bot) return;
     message.channel.send(reply[message.content]);
+  } else {
+    return;
   }
 
   if(message.channel.type === 'dm' || message.mentions.users.find('username', 'Toothpaste')) {
