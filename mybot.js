@@ -100,13 +100,14 @@ client.on("message", (message) => {
   }
 
 
-
   if(message.content.startsWith('ayy')) {
+    if(message.author.bot) return;
     let array = message.content.split(' ');
     let source = array[0];
     message.channel.send(`${reply.ayy + 'o'.repeat(source.length - 3)}`);
   } else {
-    message.channel.send(`${reply[message.content]}`);
+    if(message.author.bot) return;
+    message.channel.send(reply[message.content]);
   }
 
   if(message.channel.type === 'dm' || message.mentions.users.find('username', 'Toothpaste')) {
