@@ -99,13 +99,13 @@ client.on("message", (message) => {
     });
   }
 
-  if(message.content.startsWith(reply[message.content])) {
+  if(message.content.startsWith(`${reply}`)) {
     let array = message.content.split(' ');
     let source = array[0];
     if(message.content.startsWith('ayy')) {
       message.channel.send(`${reply.ayy + 'o'.repeat(source.length - 3)}`);
     } else {
-      message.channel.send(reply[message.content]);
+      message.channel.send(`${reply[message.content]}`);
     }
   }
 
@@ -134,7 +134,7 @@ client.on("message", (message) => {
   if(!message.content.startsWith(process.env.PREFIX)) return;
   if(message.author.bot) return;
 
-  let messageArray = message.content.split(/\s+/g).toLowerCase()
+  let messageArray = message.content.split(/\s+/g)
   let command = messageArray[0].toLowerCase()
   let args = messageArray.slice(1).toLowerCase();
 
