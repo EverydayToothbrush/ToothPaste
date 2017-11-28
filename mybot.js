@@ -100,9 +100,10 @@ client.on("message", (message) => {
   }
 
 
-  let array = message.content.split(' ');
-  let source = array[0];
+
   if(message.content.startsWith('ayy')) {
+    let array = message.content.split(' ');
+    let source = array[0];
     message.channel.send(`${reply.ayy + 'o'.repeat(source.length - 3)}`);
   } else {
     message.channel.send(`${reply[message.content]}`);
