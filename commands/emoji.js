@@ -4,12 +4,11 @@ const fs = require("fs");
 module.exports.run = async (client, message, args) => {
   if(message.content.startsWith(process.env.PREFIX + "emoji")) {
     let arg = message.content.split(' ');
-    let emoji = arg[1];
-    if(message.guild.emojis.find('id', `${emoji.replace(/:\w+:/g,'')}`)) {
+    if(message.guild.emojis.find('id', `${arg[1].replace(/:\w+:/g,'')}`)) {
       message.channel.send({files: [
         {
-          attachment: message.guild.emojis.find('id', `${emoji.replace(/:\w+:/g,'')}`).url,
-          name: `${message.guild.emojis.find('id', `${emoji.replace(/:\w+:/g,'')}`).url.split('/').pop()}`
+          attachment: message.guild.emojis.find('id', `${arg[1].replace(/:\w+:/g,'')}`).url,
+          name: `${message.guild.emojis.find('id', `${arg[1].replace(/:\w+:/g,'')}`).url.split('/').pop()}`
         }
       ]});
     } else {
