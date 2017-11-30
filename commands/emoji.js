@@ -3,8 +3,8 @@ const fs = require("fs");
 
 module.exports.run = async (client, message, args) => {
   if(message.content.startsWith(process.env.PREFIX + "emoji")) {
-    let emote = message.content.split(" ");
-    if(emote.pop().startsWith('<:')) {
+
+    if(message.content.split(" ").pop().startsWith('<:')) {
       try {
         message.channel.send({files: [
           {
