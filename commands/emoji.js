@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
   if(message.content.startsWith(process.env.PREFIX + "emoji")) {
     let arg = message.content.split(' ');
     let emoji = arg[1];
-    if(message.guild.emojis.find('name', `${emoji}`)) {
+    if(message.guild.emojis.find('id', `${emoji}`)) {
       message.channel.send({files: [
         {
           attachment: message.guild.emojis.find('name', `${emoji}`).url,
