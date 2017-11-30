@@ -11,8 +11,7 @@ module.exports.run = async (client, message, args) => {
         }
       ]});
     } else {
-      console.log(message.content);
-      message.channel.send("Which one are you looking for?");
+      message.channel.send("Invalid emoji, please choose a custom emoji from this server.");
     }
 
   }
