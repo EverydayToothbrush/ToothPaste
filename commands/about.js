@@ -2,7 +2,6 @@
 const Discord = require('discord.js');
 
 module.exports.run = async (client, message, args) => {
-  if (message.content.startsWith(process.env.PREFIX + "about")) {
     const embed = new Discord.RichEmbed()
       .setTitle('Lemme tell ya about myself!')
       .setAuthor(`${client.user.username}`, `${client.user.displayAvatarURL}`)
@@ -19,7 +18,7 @@ module.exports.run = async (client, message, args) => {
 
   }
 
-}
+
 
 module.exports.help = {
   name: 'about'
