@@ -136,12 +136,12 @@ client.on("message", (message) => {
   if(!message.content.startsWith(process.env.PREFIX)) return;
   if(message.author.bot) return;
 
-  let messageArray = message.content.toLowerCase().split(/\s+/g)
-  let command = messageArray[0]
+  let messageArray = message.content.toLowerCase().split(/\s+/g);
+  let command = messageArray[0].toLowerCase();
   let args = messageArray.slice(1);
 
   let commands = client.commands.get(command.slice(process.env.PREFIX.length));
-  if(commands.toLowerCase()) commands.run(client, message, args);
+  if(commands) commands.run(client, message, args);
 
 
 });
