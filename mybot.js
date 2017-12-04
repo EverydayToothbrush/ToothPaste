@@ -80,6 +80,7 @@ var osuApi = new osu.Api(process.env.OSUKEY, {
 });
 
 client.on("message", (message) => {
+  message.content.toLowerCase();
   let beatmap = `https://osu.ppy.sh/b/`;
   if(message.content.startsWith(beatmap)) {
     let mapId = message.content.slice(beatmap.length).replace('&m=0', '');
