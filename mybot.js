@@ -108,7 +108,7 @@ client.on("message", (message) => {
     message.channel.send(`${reply.ayy + 'o'.repeat(source.length - 3)}`);
   } else if(reply[message.content.toLowerCase()]){
     if(message.author.bot) return;
-    message.channel.send(reply[message.content]);
+    message.channel.send(reply[message.content.toLowerCase()]);
   }
 
   if(message.channel.type === 'dm' || message.mentions.users.find('username', 'Toothpaste')) {
@@ -141,7 +141,7 @@ client.on("message", (message) => {
   let args = messageArray.slice(1);
 
   let commands = client.commands.get(command.slice(process.env.PREFIX.length));
-  if(commands) commands.run(client, message, args);
+  if(commands.toLowerCase()) commands.run(client, message, args);
 
 
 });
