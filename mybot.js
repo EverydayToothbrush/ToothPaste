@@ -129,9 +129,11 @@ client.on("message", (message) => {
   let command = messageArray[0].toLowerCase();
   let args = messageArray.slice(1);
 
-  if(messageArray.includes(messageArray[message.content.startsWith('ayy')])) {
+  if(message.content.search(/ayy+/g) != -1)) {
     if(message.author.bot) return;
-    let source = messageArray[messageArray.indexOf(messageArray[message.content.startsWith('ayy')])];
+    let source = messageArray.find(element => {
+      return element = message.content.startsWith('ayy');
+    });
     message.channel.send(`${reply.ayy + 'o'.repeat(source.length - 3)}`);
   } else if(Object.keys(reply) in messageArray){
     if(message.author.bot) return;
