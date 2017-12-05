@@ -132,7 +132,7 @@ client.on("message", (message) => {
   if(message.content.search(/ayy+/g) != -1) {
     if(message.author.bot) return;
     let source = messageArray.find(element => {
-      return element = message.content.startsWith('ayy');
+      return element.startsWith('ayy');
     });
     message.channel.send(`${reply.ayy + 'o'.repeat(source.length - 3)}`);
   } else if(Object.keys(reply) in messageArray){
