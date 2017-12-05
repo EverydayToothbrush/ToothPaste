@@ -135,16 +135,14 @@ client.on("message", (message) => {
       return element.startsWith('ayy');
     });
     message.channel.send(`${reply.ayy + 'o'.repeat(source.length - 3)}`);
-  } else if(messageArray.find(item => {
-    return reply[item];
-  }) != 'undefined') {
+  } /* else if(messageArray.find(item => { return reply[item]; }) != 'undefined') {
     if(message.author.bot) return;
     let replyArray = ['owo', 'uwu'];
     let it = messageArray.find(value => {
       return replyArray[replyArray.indexOf(value)];
     })
     message.channel.send(reply[it]);
-  }
+  } */
 
   if(!message.content.startsWith(process.env.PREFIX)) return;
 
