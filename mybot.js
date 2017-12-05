@@ -135,7 +135,9 @@ client.on("message", (message) => {
       return element.startsWith('ayy');
     });
     message.channel.send(`${reply.ayy + 'o'.repeat(source.length - 3)}`);
-  } else if(Object.keys(reply) in messageArray){
+  } else if(messageArray.find(item => {
+    return reply[item];
+  }) != 'undefined') {
     if(message.author.bot) return;
     message.channel.send(reply[message.content]);
   }
