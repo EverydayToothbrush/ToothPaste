@@ -131,9 +131,9 @@ client.on("message", (message) => {
 
   if(messageArray.indexOf('ayy') != -1) {
     if(message.author.bot) return;
-    let source = messageArray[0];
+    let source = messageArray[messageArray.indexOf('ayy')];
     message.channel.send(`${reply.ayy + 'o'.repeat(source.length - 3)}`);
-  } else if(messageArray.indexOf(reply[message.content]) != -1){
+  } else if(reply.keys() in messageArray){
     if(message.author.bot) return;
     message.channel.send(reply[message.content]);
   }
