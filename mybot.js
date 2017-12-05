@@ -133,7 +133,7 @@ client.on("message", (message) => {
     if(message.author.bot) return;
     let source = messageArray[messageArray.indexOf('ayy')];
     message.channel.send(`${reply.ayy + 'o'.repeat(source.length - 3)}`);
-  } else if(reply.keys() in messageArray){
+  } else if(Object.keys(reply) in messageArray){
     if(message.author.bot) return;
     message.channel.send(reply[message.content]);
   }
