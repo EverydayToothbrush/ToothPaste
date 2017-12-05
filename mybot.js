@@ -129,7 +129,7 @@ client.on("message", (message) => {
   let command = messageArray[0].toLowerCase();
   let args = messageArray.slice(1);
 
-  if(message.content.search(/ayy+/g) != -1)) {
+  if(message.content.search(/ayy+/g) != -1) {
     if(message.author.bot) return;
     let source = messageArray.find(element => {
       return element = message.content.startsWith('ayy');
