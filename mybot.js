@@ -101,16 +101,6 @@ client.on("message", (message) => {
   }
 
 
-  if(message.content.toLowerCase().startsWith('ayy')) {
-    if(message.author.bot) return;
-    let array = message.content.split(' ');
-    let source = array[0];
-    message.channel.send(`${reply.ayy + 'o'.repeat(source.length - 3)}`);
-  } else if(reply[message.content.toLowerCase()]){
-    if(message.author.bot) return;
-    message.channel.send(reply[message.content.toLowerCase()]);
-  }
-
   if(message.channel.type === 'dm' || message.mentions.users.find('username', 'Toothpaste')) {
     if(message.content.startsWith(process.env.PREFIX)) return;
     if(message.author.bot) return;
@@ -139,6 +129,16 @@ client.on("message", (message) => {
   let messageArray = message.content.toLowerCase().split(/\s+/g);
   let command = messageArray[0].toLowerCase();
   let args = messageArray.slice(1);
+
+  if(messageArray.indexOf('ayy') != -1) {
+    if(message.author.bot) return;
+    let source = messageArray[0];
+    message.channel.send(`${reply.ayy + 'o'.repeat(source.length - 3)}`);
+  } else if(messageArray.indexOf(reply[message.content]) != -1){
+    if(message.author.bot) return;
+    message.channel.send(reply[message.content]);
+  }
+
 
   let commands = client.commands.get(command.slice(process.env.PREFIX.length));
   if(commands) commands.run(client, message, args);
