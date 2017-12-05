@@ -141,7 +141,7 @@ client.on("message", (message) => {
     if(message.author.bot) return;
     let replyArray = ['owo', 'uwu'];
     let it = messageArray.find(value => {
-      return replyArray[value];
+      return replyArray[replyArray.indexOf(value)];
     })
     message.channel.send(reply[it]);
   }
