@@ -139,7 +139,7 @@ client.on("message", (message) => {
     return reply[item];
   }) != 'undefined') {
     if(message.author.bot) return;
-    message.channel.send(reply[message.content]);
+    message.channel.send(reply[message.content.toLowerCase()]);
   }
 
   if(!message.content.startsWith(process.env.PREFIX)) return;
