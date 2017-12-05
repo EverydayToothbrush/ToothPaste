@@ -123,7 +123,6 @@ client.on("message", (message) => {
     });
   }
 
-  if(!message.content.startsWith(process.env.PREFIX)) return;
   if(message.author.bot) return;
 
   let messageArray = message.content.toLowerCase().split(/\s+/g);
@@ -139,6 +138,7 @@ client.on("message", (message) => {
     message.channel.send(reply[message.content]);
   }
 
+  if(!message.content.startsWith(process.env.PREFIX)) return;
 
   let commands = client.commands.get(command.slice(process.env.PREFIX.length));
   if(commands) commands.run(client, message, args);
