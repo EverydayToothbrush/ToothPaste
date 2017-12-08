@@ -137,7 +137,7 @@ client.on("message", (message) => {
     message.channel.send(`${reply.ayy + 'o'.repeat(source.length - 3)}`);
   } else if(messageArray.find(item => { return reply[item]; }) != undefined) {
     if(message.author.bot) return;
-    let replyArray = ['owo', 'uwu', 'catch', 'rember'];
+    let replyArray = ['owo', 'uwu', 'catch', 'rember', 'hime', 'haitai', 'lewd'];
     let it = messageArray.find(value => {
       return replyArray[replyArray.indexOf(value)];
     })
