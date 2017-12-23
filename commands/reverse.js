@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
   if(!message.content.slice(9)) {
     message.channel.fetchMessages({limit: 2})
       .then(msg => {
-        let actualStr = msg.last();
+        let actualStr = msg.last().toString();
         let reverseStr = actualStr.split("").reverse().join();
         message.channel.send(reverseStr);
       });
