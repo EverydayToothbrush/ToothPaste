@@ -2,6 +2,7 @@
 const fs = require("fs");
 
 module.exports.run = async (client, message, args) => {
+  message.delete(1000);
   if(!message.content.slice(9)) {
     message.channel.fetchMessages({limit: 2})
       .then(msg => {
