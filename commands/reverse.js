@@ -7,12 +7,14 @@ module.exports.run = async (client, message, args) => {
       .then(msg => {
         let actualStr = msg.last().toString();
         let reverseStr = actualStr.split("").reverse().join();
-        message.channel.send(reverseStr);
+        let product = reverseStr.replace(/,/g, '');
+        message.channel.send(product);
       });
   } else {
     let str = message.content.slice(9);
     let reversed = str.split("").reverse().join();
-    message.channel.send(reversed);
+    let product = reversed.replace(/,/g, '');
+    message.channel.send(product);
   }
 }
 
