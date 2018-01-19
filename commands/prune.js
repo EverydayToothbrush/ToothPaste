@@ -12,17 +12,17 @@ module.exports.run = async (client, message, args) => {
     } else if(!Number.isInteger(messagecount) && user) {
       message.reply("There is no amount specified");
       return;
-    } /* else if(Number.isInteger(messagecount) && user) {
+    } else if(Number.isInteger(messagecount) && user) {
       message.channel.fetchMessages({limit: messagecount})
         .then(messages => {
           let mentionmsg = messages.filter(m => m.author.id === user).array().slice(0, messagecount);
-          message.channel.bulkDelete(mentionmsg);
+          message.channel.bulkDelete(mentionmsg, true);
         });
         message.channel.send("Deleted " + messagecount + " messages", {code: 'js'})
           .then(message => message.delete(2000));
-    }*/ else {
+    } else {
     message.channel.fetchMessages({limit: messagecount})
-      .then(messages => message.channel.bulkDelete(messages));
+      .then(messages => message.channel.bulkDelete(messages, true));
       message.channel.send("Deleted " + messagecount + " messages", {code: 'js'})
         .then(message => message.delete(2000));
     }
