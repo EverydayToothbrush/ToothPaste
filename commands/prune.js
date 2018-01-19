@@ -15,8 +15,8 @@ module.exports.run = async (client, message, args) => {
     } else if(Number.isInteger(messagecount) && user) {
       message.channel.fetchMessages({limit: messagecount})
         .then(messages => {
-          let filter = user.id
-          let mentionmsg = messages.filter(m => m.author.id === filter).array().slice(0, messagecount);
+          let filter = user.id;
+          let mentionmsg = messages.filter(m => m.author.id === filter).array();
           message.channel.bulkDelete(mentionmsg, true);
         });
         message.channel.send("Deleted " + messagecount + " messages", {code: 'js'})
