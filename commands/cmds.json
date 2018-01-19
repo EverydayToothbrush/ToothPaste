@@ -5,7 +5,7 @@
   "avatar" : "[avatar <@USER_MENTION> to display a user's profile pic (can mention multiple). Diplay your own by not mentioning anyone",
   "ping" : "Displays Toothpaste's average heartbeat latency of the past 3 beats",
   "play" : "Must be in voice channel. <[play search_query (searches youtube)> or <[play YOUTUBE_URL>. [skip, [pause, [volume, etc also available",
-  "prune" : "MOD_ONLY. Prune specified number of messages within 14 days old <[prune NUMBER>",
+  "prune" : "MOD_ONLY. Prune specified number of messages within 14 days old. Mention a user (after number) to prune specific user <[prune NUMBER <@USER_MENTION>",
   "help" : "Explanation really required?",
   "roll" : "Rolls a number between 1 and a specified number. Defaults to 100 if no number specifed",
   "rate" : "My Judgement shall befall you. <[rate STRING_VALUE>",
