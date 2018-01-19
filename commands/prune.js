@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
     let msgArray = message.content.split(" ");
     let messagecount = parseInt(msgArray[1]);
     if(!Number.isInteger(messagecount) && !user) {
-      message.reply("There is no amount or ~~user specified~~ (feature not working icrievrtiem)");
+      message.reply("There is no amount or user specified");
       return;
     } else if(!Number.isInteger(messagecount) && user) {
       message.reply("There is no amount specified");
@@ -15,7 +15,8 @@ module.exports.run = async (client, message, args) => {
     } else if(Number.isInteger(messagecount) && user) {
       message.channel.fetchMessages({limit: messagecount})
         .then(messages => {
-          let mentionmsg = messages.filter(m => m.author.id === user).array().slice(0, messagecount);
+          let filter = user.id
+          let mentionmsg = messages.filter(m => m.author.id === filter).array().slice(0, messagecount);
           message.channel.bulkDelete(mentionmsg, true);
         });
         message.channel.send("Deleted " + messagecount + " messages", {code: 'js'})
