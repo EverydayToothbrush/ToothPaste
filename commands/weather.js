@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
         .setAuthor(`${message.member.displayName}`, `${message.author.displayAvatarURL}`)
         .setColor('RANDOM')
         .setDescription(`Longitude: **${result[0].location.long}**   Latitude: **${result[0].location.lat}**`)
-        .setFooter('Don\'t Forget to Brush Your Teeth!', `${client.users.get(181148305927962625).displayAvatarURL}`)
+        .setFooter('Don\'t Forget to Brush Your Teeth!', `${client.users.get('181148305927962625').displayAvatarURL}`)
         .setThumbnail(`${result[0].current.imageUrl}`)
         .setTimestamp()
         .addField(`Day: **${result[0].current.day}**`, `Temp: **${result[0].current.temperature} C/${((result[0].current.temperature) * (9/5)) + 32} F**   Condition: **${result[0].current.skytext}**   Date: **${result[0].current.date}**\nHumidity: **${result[0].current.humidity}**   Feels Like: **${result[0].current.feelslike} C/${((result[0].current.feelslike) * (9/5)) + 32} F** Wind: **${result[0].current.winddisplay}**\nPrecipitation: **${result[0].forecast[1].precip}%** Time: **${result[0].current.observationtime}**`)
