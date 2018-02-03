@@ -4,7 +4,7 @@ const fs = require("fs");
 
 module.exports.run = async (client, message, args) => {
   if(message.author.id === process.env.OWNER_ID) {
-    let array = message.content.split(" ");
+    let array = message.content.split(",");
     let game = array[1];
     let type = array[2];
     if(!game) {
@@ -14,11 +14,10 @@ module.exports.run = async (client, message, args) => {
     } else if(game && !type) {
       client.user.setActivity(`${game} | [help`);
     } else if(game && type) {
-      client.user.setActivity(`${game} | [help`, {
-        options: {
+      client.user.setActivity(`${game} | [help`,
+        {
           type: `${type.toUpperCase()}`
-        }
-      });
+        });
     }
   } else {
     message.channel.send("You are not the Brush");
