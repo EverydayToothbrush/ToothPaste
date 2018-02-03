@@ -4,23 +4,23 @@ const fs = require("fs");
 
 module.exports.run = async (client, message, args) => {
   if(message.author.id === process.env.OWNER_ID) {
-    let array = message.content.split(" ");
+    let arraymsg = message.content.split(" ");
     let type = ["PLAYING", "STREAMING", "LISTENING", "WATCHING"];
-    let game = array.slice(1).toString().replace(/,/g, ' ');
-    let actualgame = game.replace(/\b(WATCHING|STREAMING|LISTENING|PLAYING)/g, '')
+    let game = arraymsg.slice(1).join().toString().replace(/,/g, ' ');
+    let actualgame = game.replace(/\b(WATCHING|STREAMING|LISTENING|PLAYING)/g, '');
     if(!game) {
       message.channel.send('What Game?');
     } else if(actualgame === "default") {
       client.user.setActivity('with Toothbrush | [help');
-    } else if(game && (array.find(item => { return type.indexOf(item); } ) == -1)) {
+    } else if(game && (arraymsg.find(item => { return type[item]; } ) == undefined)) {
       client.user.setActivity(`${actualgame} | [help`);
-    } else if(game && (array.find(item => { return type.indexOf(item); } ) != -1)) {
-      let act = array.find(value => {
+    } else if(game && (arraymsg.find(item => { return type[item]; } ) != undefined)) {
+      let act = arraymsg.find(value => {
         return type[type.indexOf(value)];
       });
       client.user.setActivity(`${actualgame} | [help`,
         {
-          type: `${type[act]}`
+          type: `${act}`
         });
     }
   } else {
