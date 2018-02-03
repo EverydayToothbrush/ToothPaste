@@ -11,9 +11,9 @@ module.exports.run = async (client, message, args) => {
       message.channel.send('What Game?');
     } else if(game === "default") {
       client.user.setActivity('with Toothbrush | [help');
-    } else if(game && array.find(item => { return type[item]; } == undefined) {
+    } else if(game && array.find(item => { return type[item]; } ) == undefined) {
       client.user.setActivity(`${game} | [help`);
-    } else if(game && array.find(item => { return type[item]; } != undefined) {
+    } else if(game && array.find(item => { return type[item]; } ) != undefined) {
       let act = array.find(value => {
         return type[type.indexOf(value)];
       });
