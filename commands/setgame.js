@@ -16,7 +16,7 @@ module.exports.run = async (client, message, args) => {
       client.user.setActivity(`${actualgame} | [help`);
     } else if(game && (arraymsg.find(item => { return type[item]; } ) != undefined)) {
       let act = arraymsg.find(value => {
-        return type[type.indexOf(value)];
+        return type[value];
       });
       client.user.setActivity(`${actualgame} | [help`,
         {
