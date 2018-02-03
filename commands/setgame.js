@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
   if(message.author.id === process.env.OWNER_ID) {
     let array = message.content.split(" ");
     let game = array[1];
-    let type = array[2].toUpperCase();
+    let type = array[2];
     if(!game) {
       message.channel.send('What Game?');
     } else if(game === "default") {
@@ -16,7 +16,7 @@ module.exports.run = async (client, message, args) => {
     } else if(game && type) {
       client.user.setActivity(`${game} | [help`, {
         options: {
-          type: `${type}`
+          type: `${type.toUpperCase()}`
         }
       });
     }
