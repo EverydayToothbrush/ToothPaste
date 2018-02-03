@@ -12,9 +12,9 @@ module.exports.run = async (client, message, args) => {
       message.channel.send('What Game?');
     } else if(actualgame === "default") {
       client.user.setActivity('with Toothbrush | [help');
-    } else if(game && array.find(item => { return type.indexOf(item); } ) == -1) {
+    } else if(game && (array.find(item => { return type.indexOf(item); } ) == -1)) {
       client.user.setActivity(`${actualgame} | [help`);
-    } else if(game && array.find(item => { return type.indexOf(item); } ) != -1) {
+    } else if(game && (array.find(item => { return type.indexOf(item); } ) != -1)) {
       let act = array.find(value => {
         return type[type.indexOf(value)];
       });
