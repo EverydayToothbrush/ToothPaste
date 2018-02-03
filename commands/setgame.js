@@ -6,18 +6,19 @@ module.exports.run = async (client, message, args) => {
   if(message.author.id === process.env.OWNER_ID) {
     let array = message.content.split(" ");
     let type = ["PLAYING", "STREAMING", "LISTENING", "WATCHING"];
-    let game = array.filter(e => !type.includes(e)).toString().replace(/,/g, '');
+    let game = array.slice(1).toString().replace(/,/g, ' ');
+    let actualgame = game.replace(/\b(WATCHING|STREAMING|LISTENING|PLAYING)/g, '')
     if(!game) {
       message.channel.send('What Game?');
     } else if(game === "default") {
       client.user.setActivity('with Toothbrush | [help');
     } else if(game && array.find(item => { return type[item]; } ) == undefined) {
-      client.user.setActivity(`${game} | [help`);
+      client.user.setActivity(`${actualgame} | [help`);
     } else if(game && array.find(item => { return type[item]; } ) != undefined) {
       let act = array.find(value => {
         return type[type.indexOf(value)];
       });
-      client.user.setActivity(`${game} | [help`,
+      client.user.setActivity(`${actualgame} | [help`,
         {
           type: `${type[act]}`
         });
