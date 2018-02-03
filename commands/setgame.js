@@ -12,11 +12,11 @@ module.exports.run = async (client, message, args) => {
       message.channel.send('What Game?');
     } else if(actualgame === "default") {
       client.user.setActivity('with Toothbrush | [help');
-    } else if(game && (arraymsg.find(item => { return type[item]; } ) == undefined)) {
+    } else if(game && (arraymsg.find(item => { return type[type.indexOf(item)]; } ) == undefined)) {
       client.user.setActivity(`${actualgame} | [help`);
-    } else if(game && (arraymsg.find(item => { return type[item]; } ) != undefined)) {
+    } else if(game && (arraymsg.find(item => { return type[type.indexOf(item)]; } ) != undefined)) {
       let act = arraymsg.find(value => {
-        return type[value];
+        return type[type.indexOf(value)];
       });
       client.user.setActivity(`${actualgame} | [help`,
         {
