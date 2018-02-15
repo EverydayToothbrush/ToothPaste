@@ -33,7 +33,8 @@
     "uws": "^0.14.1",
     "weather-js": "^2.0.0",
     "xml2js": "^0.4.19",
-    "youtube-audio-stream": "0.0.50"
+    "youtube-audio-stream": "0.0.50",
+    "youtube-playlist-info": "^1.1.2"
   },
   "devDependencies": {},
   "author": "",
