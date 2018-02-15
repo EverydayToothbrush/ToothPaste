@@ -35,7 +35,8 @@
     "weather-js": "^2.0.0",
     "xml2js": "^0.4.19",
     "youtube-audio-stream": "0.0.50",
-    "youtube-playlist-info": "^1.1.2"
+    "youtube-playlist-info": "^1.1.2",
+    "ytdl-core": "^0.20.1"
   },
   "devDependencies": {},
   "author": "",
