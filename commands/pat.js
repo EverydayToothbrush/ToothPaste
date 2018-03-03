@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
     let person = message.mentions.users.first();
     message.channel.send({files: [
       {
-        attachment: `./pats/${patimg[Math.floor(Math.random() * patimg.length)]}`,
+        attachment: `./commands/pats/${patimg[Math.floor(Math.random() * patimg.length)]}`,
         name: 'headpat.gif',
         content: `${message.author.username} gave <@${person.id}> a pat!`
       }
@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
   } else {
     message.channel.send({files: [
       {
-        attachment: `./pats/${patimg[Math.floor(Math.random() * patimg.length)]}`,
+        attachment: `./commands/pats/${patimg[Math.floor(Math.random() * patimg.length)]}`,
         name: 'headpat.gif'
       }
     ]});
