@@ -3,7 +3,7 @@ const fs = require("fs");
 module.exports.run = async (client, message, args) => {
   let patimg = fs.readdirSync('./commands/pats/');
   let msgarry = message.content.split(" ");
-  if(msgarry[1] == message.mentions.users.first()) {
+  if(msgarry[1] && msgarry[1] == message.mentions.users.first()) {
     let person = message.mentions.users.first();
     message.channel.send(`${message.author.username} gave <@${person.id}> a pat!`,
       {files: [
