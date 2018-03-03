@@ -1,7 +1,7 @@
 
 const fs = require("fs");
 module.exports.run = async (client, message, args) => {
-  let patimg = fs.readdirSync('./pats/');
+  let patimg = fs.readdirSync('./commands/pats/');
   if(message.content.slice(5)) {
     let person = message.mentions.users.first();
     message.channel.send({files: [
