@@ -14,6 +14,7 @@ module.exports.run = async (client, message, args) => {
         }
       ]});
   } else {
+    let img = patimg[Math.floor(Math.random() * patimg.length)];
     message.channel.send({files: [
       {
         attachment: `./commands/pats/${img}`,
