@@ -1,6 +1,6 @@
 {
 
-  "cmd" : "avatar, ping, play, prune, help, roll, rate, kick, ban, unban, osuprofile, joined, serverinfo, anime, manga, choose, say, 8ball, about, uptime, topic, poll, invite, weather, emoji, reverse, pat",
+  "cmd" : "avatar, ping, play, prune, help, roll, rate, kick, ban, unban, osuprofile, joined, serverinfo, anime, manga, choose, say, 8ball, about, uptime, topic, poll, invite, weather, emoji, reverse, pat, slap",
   "choose" : "Split between choices using a space, <[choose stuff staff> will choose between stuff and staff",
   "avatar" : "[avatar <@USER_MENTION> to display a user's profile pic (can mention multiple). Diplay your own by not mentioning anyone",
   "ping" : "Displays Toothpaste's average heartbeat latency of the past 3 beats",
@@ -27,5 +27,6 @@
   "weather" : "Find some weather info for a given location! <[weather LOCATION_NAME or ZIPCODE>",
   "emoji" : "Display chosen emoji image <[emoji SERVER_CUSTOM_EMOJI>",
   "reverse" : "Reverse last message sent or specify an argument to reverse <[reverse STRING_TO_REVERSE (optional)>",
-  "pat" : "Sends a pat! You can optionally mention someone! <[pat USER_MENTION>"
+  "pat" : "Sends a pat! You can optionally mention someone! <[pat USER_MENTION>",
+  "slap" : "Slap someone! You can optionally mention someone! <[slap USER_MENTION>"
 }
