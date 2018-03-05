@@ -3,6 +3,9 @@ const fs = require("fs");
 module.exports.run = async (client, message, args) => {
   let patimg = fs.readdirSync('./commands/pats/');
   let msgarry = message.content.split(" ");
+  if(patimg.length == 0) {
+    message.channel.send("There are no images.");
+  }
   if(msgarry[1] && (message.mentions.users.first() != undefined)) {
     let img = patimg[Math.floor(Math.random() * patimg.length)];
     let person = message.mentions.users.first();
