@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
     if(person.id == 181148305927962625) {
       message.channel.send(`The slap was deflected with the force a thousand toothbrushes, <@${message.author.id}> has now died with perfect dental health.`)
     } else {
-      message.channel.send(`${message.author.username} slapped <@${person.id}> !`,
+      message.channel.send(`**${message.author.username}** slapped <@${person.id}> !`,
         {files: [
           {
             attachment: `./commands/slaps/${img}`,
