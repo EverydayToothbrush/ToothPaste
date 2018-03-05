@@ -12,14 +12,14 @@ module.exports.run = async (client, message, args) => {
     if(person.id == 181148305927962625) {
       message.channel.send(`The slap was deflected with the force a thousand toothbrushes, <@${message.author.id}> has now died with perfect dental health.`)
     } else {
-    message.channel.send(`${message.author.username} slapped <@${person.id}> !`,
-      {files: [
-        {
-          attachment: `./commands/slaps/${img}`,
-          name: `${img}`
-        }
-      ]});
-    }
+      message.channel.send(`${message.author.username} slapped <@${person.id}> !`,
+        {files: [
+          {
+            attachment: `./commands/slaps/${img}`,
+            name: `${img}`
+          }
+        ]});
+      }
   } else {
     let img = slapimg[Math.floor(Math.random() * slapimg.length)];
     message.channel.send({files: [
