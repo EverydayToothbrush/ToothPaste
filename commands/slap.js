@@ -9,6 +9,9 @@ module.exports.run = async (client, message, args) => {
   if(msgarry[1] && (message.mentions.users.first() != undefined)) {
     let img = slapimg[Math.floor(Math.random() * slapimg.length)];
     let person = message.mentions.users.first();
+    if(person.id == 181148305927962625) {
+      message.channel.send(`The slap was deflected with the force a thousand toothbrushes, <@${message.author.id}> has now died with perfect dental health.`)
+    } else {
     message.channel.send(`${message.author.username} slapped <@${person.id}> !`,
       {files: [
         {
@@ -16,6 +19,7 @@ module.exports.run = async (client, message, args) => {
           name: `${img}`
         }
       ]});
+    }
   } else {
     let img = slapimg[Math.floor(Math.random() * slapimg.length)];
     message.channel.send({files: [
