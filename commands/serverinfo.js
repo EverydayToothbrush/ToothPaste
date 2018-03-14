@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
     .setTitle('Server Information')
     .setAuthor(`${message.guild.name}`, `${message.guild.iconURL}`)
     .setColor([0, 255, 255])
-    .setFooter('Don\'t Forget to Brush Your Teeth!', 'https://cdn.discordapp.com/avatars/181148305927962625/18a8691ce47a3175e8e836ca51d6da94.webp')
+    .setFooter('Don\'t Forget to Brush Your Teeth!', `${client.users.get('181148305927962625').displayAvatarURL}`)
     .setThumbnail(`${message.guild.iconURL}`)
     .setTimestamp()
     .setURL(`${message.author.displayAvatarURL}`)
