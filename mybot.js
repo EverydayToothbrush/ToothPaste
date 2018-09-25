@@ -58,7 +58,7 @@ client.on('ready', () => {
   client.user.setActivity('with Toothbrush | [help');
 });
 
-const music = new Music(client, {
+const music = Music.start(client, {
   youtubeKey: 'AIzaSyC6HLzmz75kTnNh1YF_o3lLK7T3U65HNa8',
   prefix: process.env.PREFIX,
   maxQueueSize: 50,
