@@ -39,8 +39,6 @@ client.on('warn', (e) => console.warn(e));
 client.on('debug', (e) => console.info(e));
 
 
-bot.connect()
-
 client.on('ready', () => {
   console.log('I am ready!');
   console.log(client.commands);
