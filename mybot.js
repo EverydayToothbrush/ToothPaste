@@ -5,7 +5,6 @@ const fs = require("fs");
 const ytdl = require('ytdl-core');
 const Music = require('discord.js-musicbot-addon');
 const mal = require("maljs")
-const SpoilerBot = require('discord-spoiler-bot');
 const osu = require('node-osu');
 const reply = require('./replies.json');
 
@@ -39,17 +38,7 @@ client.on('warn', (e) => console.warn(e));
 
 client.on('debug', (e) => console.info(e));
 
-let config2 = {
-    client: client,
-    markUserIds: [
-      '181148305927962625',
-      '229356212414709760',
-      '212405356142264320',
-      '212930627115286529'
-    ],
-};
 
-let bot = new SpoilerBot(config2);
 bot.connect()
 
 client.on('ready', () => {
