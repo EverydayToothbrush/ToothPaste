@@ -47,7 +47,7 @@ client.on('ready', () => {
 
 const music = Music.start(client, {
   youtubeKey: 'AIzaSyC6HLzmz75kTnNh1YF_o3lLK7T3U65HNa8',
-  prefix: process.env.PREFIX,
+  prefix: 'm[',
   maxQueueSize: 50,
   clearInvoker: false,
   ownerOverMember: true,
