@@ -47,11 +47,12 @@ client.on('ready', () => {
 
 const music = Music.start(client, {
   youtubeKey: 'AIzaSyC6HLzmz75kTnNh1YF_o3lLK7T3U65HNa8',
-  prefix: 'm[',
+  botPrefix: 'm[',
   maxQueueSize: 50,
+  bigPicture: true,
   clearInvoker: false,
   ownerOverMember: true,
-  botOwner: process.env.OWNER_ID,
+  ownerID: process.env.OWNER_ID,
   requesterName: true,
   inlineEmbeds: false
 });
